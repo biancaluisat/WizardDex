@@ -1,18 +1,9 @@
-/* =========================
-   PÁGINA
-========================= */
-
 .main {
   min-height: 100vh;
   background: #080b20;
   color: #f4f1e8;
   overflow-x: hidden;
 }
-
-
-/* =========================
-   NAVBAR
-========================= */
 
 .navbar {
   height: 75px;
@@ -83,10 +74,6 @@
 }
 
 
-/* =========================
-   BANNER
-========================= */
-
 .banner {
   height: 680px;
   position: relative;
@@ -130,11 +117,6 @@
   padding-top: 15px;
 }
 
-
-/* =========================
-   TEXTO ACIMA DA LOGO
-========================= */
-
 .bannerTop {
   display: flex;
   align-items: center;
@@ -160,9 +142,6 @@
 }
 
 
-/* =========================
-   LOGO
-========================= */
 
 .bannerLogo {
   width: 290px;
@@ -177,10 +156,6 @@
   transform: scale(1.05);
 }
 
-
-/* =========================
-   TEXTO ABAIXO DA LOGO
-========================= */
 
 .bannerText {
   margin-top: 25px;
@@ -215,9 +190,6 @@
 }
 
 
-/* =========================
-   BOTÃO DO BANNER
-========================= */
 
 .bannerButton {
   padding: 13px 22px;
@@ -249,9 +221,6 @@
 }
 
 
-/* =========================
-   DECORAÇÕES
-========================= */
 
 .bannerDecoration {
   position: absolute;
@@ -274,9 +243,6 @@
 }
 
 
-/* =========================
-   SEÇÃO DOS CARDS
-========================= */
 
 .quickSection {
   max-width: 1000px;
@@ -309,9 +275,6 @@
 }
 
 
-/* =========================
-   GRID
-========================= */
 
 .quickGrid {
   display: grid;
@@ -322,9 +285,6 @@
 }
 
 
-/* =========================
-   CARDS
-========================= */
 
 .quickCard {
   position: relative;
@@ -358,7 +318,6 @@
 }
 
 
-/* CARD ROXO */
 
 .purpleCard {
   background: #30285b;
@@ -369,7 +328,6 @@
 }
 
 
-/* NÚMERO */
 
 .cardNumber {
   color: #d4a94f;
@@ -379,8 +337,6 @@
   letter-spacing: 2px;
 }
 
-
-/* CONTEÚDO */
 
 .cardContent {
   margin-top: 30px;
@@ -419,8 +375,6 @@
 }
 
 
-/* SETA */
-
 .arrow {
   position: absolute;
 
@@ -440,9 +394,6 @@
 }
 
 
-/* =========================
-   SOBRE O PROJETO
-========================= */
 
 .project {
   padding: 90px 25px;
@@ -515,9 +466,6 @@
 }
 
 
-/* =========================
-   TECNOLOGIAS
-========================= */
 
 .techSection {
   max-width: 1150px;
@@ -568,7 +516,6 @@
 }
 
 
-/* TECNOLOGIAS */
 
 .techList {
   display: grid;
@@ -629,9 +576,6 @@
 }
 
 
-/* =========================
-   OBJETIVO
-========================= */
 
 .mission {
   padding: 90px 25px;
@@ -746,68 +690,7 @@
 }
 
 
-/* =========================
-   FOOTER
-========================= */
 
-.footer {
-  max-width: 1150px;
-
-  min-height: 90px;
-
-  margin: auto;
-
-  padding: 20px 25px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  border-top: 1px solid #252b49;
-}
-
-.footerBrand {
-  display: flex;
-
-  align-items: center;
-
-  gap: 9px;
-}
-
-.footerBrand strong {
-  color: #e1b85c;
-
-  font-family: Georgia, serif;
-
-  font-size: 13px;
-
-  letter-spacing: 2px;
-}
-
-.footerBrand img {
-  object-fit: contain;
-}
-
-.footer p {
-  margin: 0;
-
-  color: #777f9b;
-
-  font-size: 11px;
-}
-
-.footer > span {
-  color: #555d78;
-
-  font-size: 9px;
-}
-
-
-/* =========================
-   TABLET
-========================= */
 
 @media (max-width: 900px) {
 
@@ -831,9 +714,6 @@
 }
 
 
-/* =========================
-   CELULAR
-========================= */
 
 @media (max-width: 600px) {
 
@@ -858,7 +738,7 @@
   }
 
 
-  /* BANNER */
+
 
   .banner {
     height: 620px;
@@ -887,7 +767,7 @@
   }
 
 
-  /* CARDS */
+
 
   .quickSection {
     padding: 70px 20px;
@@ -902,7 +782,7 @@
   }
 
 
-  /* SOBRE */
+
 
   .project {
     padding: 70px 20px;
@@ -913,7 +793,7 @@
   }
 
 
-  /* TECNOLOGIAS */
+
 
   .techSection {
     padding: 70px 20px;
@@ -932,7 +812,6 @@
   }
 
 
-  /* OBJETIVO */
 
   .mission {
     padding: 70px 20px;
@@ -966,4 +845,5 @@
     font-size: 28px;
   }
 
-  }
+
+}
