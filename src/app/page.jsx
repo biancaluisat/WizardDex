@@ -1,62 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./page.module.css";
+import Header from "../components/Header/Header";
+import estilos from "./page.module.css";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main className={estilos.principal}>
 
+      <Header />
 
-      <header className={styles.navbar}>
-        <div className={styles.navContainer}>
-
-          <Link href="/" className={styles.brand}>
-            <Image
-              src="/images/logo.png"
-              alt="Logo WizardDex"
-              width={50}
-              height={50}
-            />
-
-            <div>
-              <strong>WIZARDDEX</strong>
-              <small>ENCICLOPÉDIA DOS BRUXOS</small>
-            </div>
-          </Link>
-
-          <nav>
-            <Link href="/" className={styles.active}>
-              Início
-            </Link>
-
-            <Link href="/personagens">
-              Personagens
-            </Link>
-
-            <Link href="/sobre">
-              Sobre
-            </Link>
-          </nav>
-
-        </div>
-      </header>
-
-
-      <section className={styles.banner}>
+      <section className={estilos.banner}>
 
         <Image
-          src="/images/banner.jpg"
+          src="/images/hogwartss.png"
           alt="Universo mágico"
           fill
           priority
-          className={styles.bannerImage}
+          className={estilos.imagemBanner}
         />
 
-        <div className={styles.bannerOverlay}></div>
+        <div className={estilos.sobreposicaoBanner}></div>
 
-        <div className={styles.bannerContent}>
+        <div className={estilos.conteudoBanner}>
 
-          <div className={styles.bannerTop}>
+          <div className={estilos.topoBanner}>
             <span></span>
 
             <p>MINISTÉRIO DA MAGIA</p>
@@ -64,17 +31,15 @@ export default function Home() {
             <span></span>
           </div>
 
-
           <Image
             src="/images/logo.png"
             alt="WizardDex"
             width={290}
             height={290}
-            className={styles.bannerLogo}
+            className={estilos.logoBanner}
           />
 
-
-          <div className={styles.bannerText}>
+          <div className={estilos.textoBanner}>
 
             <h1>
               A enciclopédia digital dos bruxos
@@ -87,10 +52,9 @@ export default function Home() {
 
           </div>
 
-
           <Link
             href="/personagens"
-            className={styles.bannerButton}
+            className={estilos.botaoBanner}
           >
             Explorar personagens
 
@@ -99,8 +63,7 @@ export default function Home() {
 
         </div>
 
-
-        <div className={styles.bannerDecoration}>
+        <div className={estilos.decoracaoBanner}>
           <span>✦</span>
           <span>✧</span>
           <span>✦</span>
@@ -109,9 +72,9 @@ export default function Home() {
       </section>
 
 
-      <section className={styles.quickSection}>
+      <section className={estilos.secaoAtalhos}>
 
-        <div className={styles.sectionIntro}>
+        <div className={estilos.introducaoSecao}>
 
           <span>
             WIZARDDEX
@@ -123,22 +86,20 @@ export default function Home() {
 
         </div>
 
-
-        <div className={styles.quickGrid}>
-
+        <div className={estilos.gradeAtalhos}>
 
           <Link
             href="/personagens"
-            className={styles.quickCard}
+            className={estilos.cartaoAtalho}
           >
 
-            <div className={styles.cardNumber}>
+            <div className={estilos.numeroCartao}>
               01
             </div>
 
-            <div className={styles.cardContent}>
+            <div className={estilos.conteudoCartao}>
 
-              <span className={styles.cardIcon}>
+              <span className={estilos.iconeCartao}>
                 ♙
               </span>
 
@@ -154,7 +115,7 @@ export default function Home() {
 
             </div>
 
-            <span className={styles.arrow}>
+            <span className={estilos.setaCartao}>
               ↗
             </span>
 
@@ -163,16 +124,16 @@ export default function Home() {
 
           <Link
             href="/sobre"
-            className={`${styles.quickCard} ${styles.purpleCard}`}
+            className={`${estilos.cartaoAtalho} ${estilos.cartaoRoxo}`}
           >
 
-            <div className={styles.cardNumber}>
+            <div className={estilos.numeroCartao}>
               02
             </div>
 
-            <div className={styles.cardContent}>
+            <div className={estilos.conteudoCartao}>
 
-              <span className={styles.cardIcon}>
+              <span className={estilos.iconeCartao}>
                 ✦
               </span>
 
@@ -188,7 +149,7 @@ export default function Home() {
 
             </div>
 
-            <span className={styles.arrow}>
+            <span className={estilos.setaCartao}>
               ↗
             </span>
 
@@ -198,24 +159,22 @@ export default function Home() {
 
       </section>
 
-      <section className={styles.project}>
 
-        <div className={styles.projectTag}>
+      <section className={estilos.projeto}>
+
+        <div className={estilos.etiquetaProjeto}>
           SOBRE A WIZARDDEX
         </div>
 
-
-        <div className={styles.projectContent}>
+        <div className={estilos.conteudoProjeto}>
 
           <h2>
             Uma biblioteca
             <br />
-
             <span>do mundo mágico.</span>
           </h2>
 
-
-          <div className={styles.projectText}>
+          <div className={estilos.textoProjeto}>
 
             <p>
               A WizardDex é uma enciclopédia digital criada
@@ -238,15 +197,14 @@ export default function Home() {
 
         </div>
 
-
-        <div className={styles.projectLine}></div>
+        <div className={estilos.linhaProjeto}></div>
 
       </section>
 
 
-      <section className={styles.techSection}>
+      <section className={estilos.secaoTecnologias}>
 
-        <div className={styles.techHeader}>
+        <div className={estilos.cabecalhoTecnologias}>
 
           <div>
 
@@ -267,10 +225,9 @@ export default function Home() {
 
         </div>
 
+        <div className={estilos.listaTecnologias}>
 
-        <div className={styles.techList}>
-
-          <div className={styles.techItem}>
+          <div className={estilos.itemTecnologia}>
             <span>01</span>
 
             <strong>
@@ -282,8 +239,7 @@ export default function Home() {
             </small>
           </div>
 
-
-          <div className={styles.techItem}>
+          <div className={estilos.itemTecnologia}>
             <span>02</span>
 
             <strong>
@@ -295,8 +251,7 @@ export default function Home() {
             </small>
           </div>
 
-
-          <div className={styles.techItem}>
+          <div className={estilos.itemTecnologia}>
             <span>03</span>
 
             <strong>
@@ -308,8 +263,7 @@ export default function Home() {
             </small>
           </div>
 
-
-          <div className={styles.techItem}>
+          <div className={estilos.itemTecnologia}>
             <span>04</span>
 
             <strong>
@@ -321,8 +275,7 @@ export default function Home() {
             </small>
           </div>
 
-
-          <div className={styles.techItem}>
+          <div className={estilos.itemTecnologia}>
             <span>05</span>
 
             <strong>
@@ -339,17 +292,17 @@ export default function Home() {
       </section>
 
 
-      <section className={styles.mission}>
+      <section className={estilos.missao}>
 
-        <div className={styles.missionBox}>
+        <div className={estilos.caixaMissao}>
 
-          <div className={styles.missionSide}>
+          <div className={estilos.lateralMissao}>
 
             <span>
               NOSSA MISSÃO
             </span>
 
-            <div className={styles.missionSymbol}>
+            <div className={estilos.simboloMissao}>
               ✧
             </div>
 
@@ -359,14 +312,12 @@ export default function Home() {
 
           </div>
 
-
-          <div className={styles.missionContent}>
+          <div className={estilos.conteudoMissao}>
 
             <h2>
               Conhecimento também
               <span> é magia.</span>
             </h2>
-
 
             <p>
               O objetivo da WizardDex é criar uma experiência
@@ -375,10 +326,9 @@ export default function Home() {
               e divertida.
             </p>
 
-
             <Link
               href="/personagens"
-              className={styles.missionButton}
+              className={estilos.botaoMissao}
             >
               Conhecer personagens
             </Link>
