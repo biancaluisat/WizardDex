@@ -1,0 +1,86 @@
+.card {
+  background-color: #131b2e;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+  border-color: #f59e0b;
+}
+
+.cardImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  background-color: #0f172a;
+}
+
+.cardImage {
+  object-fit: cover;
+  object-position: top;
+}
+
+.favoriteBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(10, 14, 23, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+  z-index: 2;
+}
+
+.favoriteBtn:hover {
+  transform: scale(1.15);
+}
+
+.cardContent {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.cardTitle {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: #f8fafc;
+}
+
+.cardBadge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: fit-content;
+  text-transform: capitalize;
+}
+
+.badgeGryffindor { background-color: #7f1d1d; color: #fef08a; }
+.badgeSlytherin { background-color: #064e3b; color: #a7f3d0; }
+.badgeRavenclaw { background-color: #1e3a8a; color: #bfdbfe; }
+.badgeHufflepuff { background-color: #78350f; color: #fef08a; }
+.badgeDefault { background-color: #334155; color: #cbd5e1; }
+
+.cardActor {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}

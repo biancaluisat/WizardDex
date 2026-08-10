@@ -1,5 +1,11 @@
 import './globals.css';
 import { Toaster } from 'react-hot-toast';
+import { Cinzel } from 'next/font/google';
+
+const cinzel = Cinzel({
+    subsets: ['latin'],
+    variable: '--font-cinzel',
+});
 
 export const metadata = {
     title: 'FrontEnd - Codeverse',
@@ -9,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="pt-BR">
-            <body>
+            <body className={cinzel.variable}>
                 {children}
                 <Toaster />
             </body>
