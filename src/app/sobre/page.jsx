@@ -1,8 +1,10 @@
 import styles from './sobre.module.css';
+import Header from '@/components/Header/Header';
 
 export default function Sobre() {
     return (
         <main className={styles.page}>
+            <Header />
 
             <section className={styles.hero}>
                 <div className={styles.heroDecoration}>✦</div>
