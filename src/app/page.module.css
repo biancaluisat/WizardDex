@@ -1,102 +1,28 @@
-.main {
+.principal {
   min-height: 100vh;
   background: #080b20;
-  color: #f4f1e8;
+  color: #f8fafc;
   overflow-x: hidden;
-}
-
-.navbar {
-  height: 75px;
-  background: #080b20;
-  border-bottom: 1px solid #292d4d;
-}
-
-.navContainer {
-  max-width: 1200px;
-  height: 100%;
-  margin: auto;
-  padding: 0 25px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  text-decoration: none;
-  color: #f4f1e8;
-}
-
-.brand img {
-  object-fit: contain;
-}
-
-.brand div {
-  display: flex;
-  flex-direction: column;
-}
-
-.brand strong {
-  color: #e1b85c;
-  font-family: Georgia, serif;
-  font-size: 17px;
-  letter-spacing: 2px;
-}
-
-.brand small {
-  color: #858ba7;
-  font-size: 8px;
-  letter-spacing: 1.5px;
-}
-
-.navContainer nav {
-  display: flex;
-  gap: 30px;
-}
-
-.navContainer nav a {
-  color: #c2c5d4;
-  text-decoration: none;
-  font-size: 12px;
-  transition: 0.3s;
-}
-
-.navContainer nav a:hover {
-  color: #e1b85c;
-}
-
-.navContainer nav .active {
-  color: #e1b85c;
 }
 
 
 .banner {
   height: 680px;
   position: relative;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   overflow: hidden;
 }
 
-.bannerImage {
+.imagemBanner {
   object-fit: cover;
-  z-index: 0;
-
   filter: brightness(0.55);
 }
 
-.bannerOverlay {
+.sobreposicaoBanner {
   position: absolute;
   inset: 0;
-  z-index: 1;
-
   background: linear-gradient(
     to bottom,
     rgba(8, 11, 32, 0.25),
@@ -104,586 +30,433 @@
   );
 }
 
-.bannerContent {
+.conteudoBanner {
   position: relative;
-  z-index: 3;
-
   text-align: center;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  padding-top: 15px;
+  padding: 15px 20px 0;
 }
 
-.bannerTop {
+.topoBanner {
   display: flex;
   align-items: center;
   gap: 12px;
-
   margin-bottom: 2px;
 }
 
-.bannerTop span {
+.topoBanner span {
   width: 35px;
   height: 1px;
-
   background: #d4a94f;
 }
 
-.bannerTop p {
+.topoBanner p {
   margin: 0;
-
   color: #e1b85c;
-
   font-size: 9px;
+  font-weight: 600;
   letter-spacing: 3px;
 }
 
-
-
-.bannerLogo {
+.logoBanner {
   width: 290px;
   height: 290px;
-
   object-fit: contain;
-
   transition: 0.4s;
 }
 
-.bannerLogo:hover {
+.logoBanner:hover {
   transform: scale(1.05);
 }
 
-
-.bannerText {
+.textoBanner {
   margin-top: 25px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.bannerText h1 {
+.textoBanner h1 {
   margin: 0 0 12px;
-
-  color: #f0cc72;
-
-  font-family: Georgia, serif;
-
-  font-size: 28px;
-
-  font-weight: normal;
+  color: #f8fafc;
+  font-family: var(--font-cinzel), serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-.bannerText p {
-  max-width: 500px;
-
+.textoBanner p {
+  max-width: 550px;
   margin: 0 0 28px;
-
-  color: #dedfea;
-
-  font-size: 14px;
-
+  color: #94a3b8;
+  font-size: 1.05rem;
+  font-weight: 400;
   line-height: 1.7;
 }
 
-
-
-.bannerButton {
+.botaoBanner {
   padding: 13px 22px;
-
   display: flex;
   align-items: center;
   gap: 18px;
-
   background: #d4a94f;
-
   color: #080b20;
-
   text-decoration: none;
-
   font-size: 11px;
-  font-weight: bold;
-
+  font-weight: 700;
   transition: 0.3s;
 }
 
-.bannerButton:hover {
+.botaoBanner:hover {
   background: #f0cc72;
-
   transform: translateY(-3px);
 }
 
-.bannerButton span {
+.botaoBanner span {
   font-size: 17px;
 }
 
-
-
-.bannerDecoration {
+.decoracaoBanner {
   position: absolute;
-
-  z-index: 2;
-
   inset: 25px;
-
   display: flex;
-
   justify-content: space-between;
-
   pointer-events: none;
 }
 
-.bannerDecoration span {
+.decoracaoBanner span {
   color: #d4a94f;
-
   font-size: 18px;
 }
 
 
-
-.quickSection {
+.secaoAtalhos {
   max-width: 1000px;
-
   margin: auto;
-
   padding: 90px 25px;
 }
 
-.sectionIntro {
+.introducaoSecao {
   margin-bottom: 35px;
 }
 
-.sectionIntro > span {
+.introducaoSecao > span {
   color: #d4a94f;
-
   font-size: 9px;
-
+  font-weight: 600;
   letter-spacing: 3px;
 }
 
-.sectionIntro h2 {
+.introducaoSecao h2 {
   margin: 10px 0 0;
-
-  font-family: Georgia, serif;
-
-  font-size: 38px;
-
-  font-weight: normal;
+  color: #f8fafc;
+  font-family: var(--font-cinzel), serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-
-
-.quickGrid {
+.gradeAtalhos {
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 20px;
 }
 
-
-
-.quickCard {
+.cartaoAtalho {
   position: relative;
-
   min-height: 260px;
-
   padding: 28px;
-
-  background: #111735;
-
-  border: 1px solid #292e50;
-
-  color: #f4f1e8;
-
+  background: #131b2e;
+  border: 1px solid #1e293b;
+  color: #f8fafc;
   text-decoration: none;
-
   overflow: hidden;
-
   transition:
     transform 0.3s ease,
     border-color 0.3s ease,
-    background 0.3s ease;
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.quickCard:hover {
+.cartaoAtalho:hover {
   transform: translateY(-8px);
-
-  border-color: #d4a94f;
-
-  background: #171e43;
+  border-color: #f59e0b;
+  background: #171f35;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
 }
 
-
-
-.purpleCard {
+.cartaoRoxo {
   background: #30285b;
 }
 
-.purpleCard:hover {
+.cartaoRoxo:hover {
   background: #3a316b;
 }
 
-
-
-.cardNumber {
+.numeroCartao {
   color: #d4a94f;
-
   font-size: 9px;
-
+  font-weight: 600;
   letter-spacing: 2px;
 }
 
-
-.cardContent {
+.conteudoCartao {
   margin-top: 30px;
 }
 
-.cardIcon {
+.iconeCartao {
   display: block;
-
   margin-bottom: 12px;
-
   color: #e7c56c;
-
   font-size: 30px;
 }
 
-.quickCard h3 {
+.cartaoAtalho h3 {
   margin: 0 0 10px;
-
-  font-family: Georgia, serif;
-
-  font-size: 27px;
-
-  font-weight: normal;
+  color: #f8fafc;
+  font-family: var(--font-cinzel), serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
-.quickCard p {
-  max-width: 340px;
-
+.cartaoAtalho p {
+  max-width: 360px;
   margin: 0;
-
-  color: #b9bed0;
-
-  font-size: 13px;
-
-  line-height: 1.8;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.75;
 }
 
-
-.arrow {
+.setaCartao {
   position: absolute;
-
   right: 23px;
-
   bottom: 20px;
-
   color: #d4a94f;
-
   font-size: 20px;
-
   transition: 0.3s;
 }
 
-.quickCard:hover .arrow {
+.cartaoAtalho
+:hover 
+.setaCartao {
   transform: translate(5px, -5px);
 }
 
 
-
-.project {
+.projeto {
   padding: 90px 25px;
-
   background: #10152f;
-
   border-top: 1px solid #252b49;
-
   border-bottom: 1px solid #252b49;
 }
 
-.projectTag {
+.etiquetaProjeto {
   max-width: 1150px;
-
   margin: 0 auto 35px;
-
   color: #d4a94f;
-
   font-size: 9px;
-
+  font-weight: 600;
   letter-spacing: 3px;
 }
 
-.projectContent {
+.conteudoProjeto {
   max-width: 1150px;
-
   margin: auto;
-
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 70px;
 }
 
-.projectContent h2 {
+.conteudoProjeto h2 {
   margin: 0;
-
-  font-family: Georgia, serif;
-
-  font-size: 48px;
-
-  font-weight: normal;
-
-  line-height: 1.1;
+  color: #f8fafc;
+  font-family: var(--font-cinzel), serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.15;
 }
 
-.projectContent h2 span {
+.conteudoProjeto h2 span {
   color: #e1b85c;
 }
 
-.projectText p {
+.textoProjeto p {
   margin: 0 0 20px;
-
-  color: #bfc3d3;
-
-  font-size: 14px;
-
+  color: #94a3b8;
+  font-size: 1rem;
   line-height: 1.8;
 }
 
-.projectLine {
+.linhaProjeto {
   max-width: 1150px;
-
   margin: 55px auto 0;
-
   height: 1px;
-
   background: #383d5c;
 }
 
 
-
-.techSection {
+.secaoTecnologias {
   max-width: 1150px;
-
   margin: auto;
-
   padding: 90px 25px;
 }
 
-.techHeader {
+.cabecalhoTecnologias {
   display: flex;
-
   justify-content: space-between;
-
   align-items: end;
-
   margin-bottom: 35px;
 }
 
-.techHeader span {
+.cabecalhoTecnologias span {
   color: #d4a94f;
-
   font-size: 9px;
-
+  font-weight: 600;
   letter-spacing: 3px;
 }
 
-.techHeader h2 {
+.cabecalhoTecnologias h2 {
   margin: 8px 0 0;
-
-  font-family: Georgia, serif;
-
-  font-size: 38px;
-
-  font-weight: normal;
+  color: #f8fafc;
+  font-family: var(--font-cinzel), serif;
+  font-size: 2.3rem;
+  font-weight: 700;
 }
 
-.techHeader p {
-  max-width: 300px;
-
+.cabecalhoTecnologias p {
+  max-width: 330px;
   margin: 0;
-
-  color: #858ba6;
-
-  font-size: 12px;
-
+  color: #94a3b8;
+  font-size: 0.9rem;
   line-height: 1.7;
 }
 
-
-
-.techList {
+.listaTecnologias {
   display: grid;
-
   grid-template-columns: repeat(5, 1fr);
-
   gap: 12px;
 }
 
-.techItem {
+.itemTecnologia {
   min-height: 130px;
-
   padding: 20px;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: space-between;
-
-  background: #111735;
-
-  border: 1px solid #292e50;
-
+  background: #131b2e;
+  border: 1px solid #1e293b;
   transition: 0.3s;
 }
 
-.techItem:hover {
+.itemTecnologia:hover {
   transform: translateY(-5px);
-
-  border-color: #d4a94f;
-
-  background: #171e43;
+  border-color: #f59e0b;
+  background: #171f35;
 }
 
-.techItem > span {
+.itemTecnologia > span {
   color: #d4a94f;
-
   font-size: 9px;
 }
 
-.techItem strong {
-  font-family: Georgia, serif;
-
-  font-size: 19px;
-
-  font-weight: normal;
+.itemTecnologia strong {
+  color: #f8fafc;
+  font-family: var(--font-cinzel), serif;
+  font-size: 1.05rem;
+  font-weight: 700;
 }
 
-.techItem small {
+.itemTecnologia small {
   color: #7e85a2;
-
-  font-size: 9px;
-
+  font-size: 0.7rem;
   text-transform: uppercase;
-
   letter-spacing: 1px;
 }
 
 
-
-.mission {
+.missao {
   padding: 90px 25px;
-
   background: #0b0f27;
 }
 
-.missionBox {
+.caixaMissao {
   max-width: 1050px;
-
   margin: auto;
-
   display: grid;
-
   grid-template-columns: 190px 1fr;
-
   background: #1b2450;
-
   border: 1px solid #3b4160;
 }
 
-.missionSide {
+.lateralMissao {
   padding: 30px;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: space-between;
-
   border-right: 1px solid #3b4160;
 }
 
-.missionSide > span {
+.lateralMissao > span {
   color: #d4a94f;
-
   font-size: 9px;
-
+  font-weight: 600;
   letter-spacing: 3px;
 }
 
-.missionSymbol {
+.simboloMissao {
   color: #e4c36c;
-
   font-size: 55px;
-
   text-align: center;
 }
 
-.missionSide small {
+.lateralMissao small {
   color: #727a98;
-
   font-size: 8px;
-
   letter-spacing: 2px;
 }
 
-.missionContent {
+.conteudoMissao {
   padding: 45px;
 }
 
-.missionContent h2 {
+.conteudoMissao h2 {
   margin: 0 0 18px;
-
-  font-family: Georgia, serif;
-
-  font-size: 35px;
-
-  font-weight: normal;
+  color: #f8fafc;
+  font-family: var(--font-cinzel), serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-.missionContent h2 span {
+.conteudoMissao h2 span {
   color: #e1b85c;
 }
 
-.missionContent p {
-  max-width: 600px;
-
+.conteudoMissao p {
+  max-width: 650px;
   margin: 0 0 25px;
-
-  color: #c0c4d2;
-
-  font-size: 13px;
-
+  color: #94a3b8;
+  font-size: 0.95rem;
   line-height: 1.8;
 }
 
-.missionButton {
+.botaoMissao {
   display: inline-block;
-
   padding: 12px 18px;
-
   border: 1px solid #d4a94f;
-
   color: #e1b85c;
-
   text-decoration: none;
-
   font-size: 9px;
-
+  font-weight: 600;
   text-transform: uppercase;
-
   letter-spacing: 1px;
-
   transition: 0.3s;
 }
 
-.missionButton:hover {
+.botaoMissao:hover {
   background: #d4a94f;
 
   color: #080b20;
@@ -691,159 +464,124 @@
 
 
 
-
 @media (max-width: 900px) {
-
-  .quickGrid {
+  .gradeAtalhos {
     grid-template-columns: 1fr 1fr;
   }
 
-  .projectContent {
+  .conteudoProjeto {
     grid-template-columns: 1fr;
-
     gap: 35px;
   }
 
-  .techList {
+  .listaTecnologias {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .missionBox {
+  .caixaMissao {
     grid-template-columns: 160px 1fr;
   }
 }
 
-
-
 @media (max-width: 600px) {
-
-  .navbar {
-    height: auto;
-  }
-
-  .navContainer {
-    padding: 15px 20px;
-
-    flex-direction: column;
-
-    gap: 15px;
-  }
-
-  .navContainer nav {
-    gap: 18px;
-  }
-
-  .navContainer nav a {
-    font-size: 10px;
-  }
-
-
-
-
   .banner {
     height: 620px;
   }
 
-  .bannerContent {
+  .conteudoBanner {
     padding: 0 20px;
   }
 
-  .bannerLogo {
+  .logoBanner {
     width: 220px;
-
     height: 220px;
   }
 
-  .bannerText {
+  .textoBanner {
     margin-top: 18px;
   }
 
-  .bannerText h1 {
-    font-size: 22px;
+  .textoBanner h1 {
+    font-size: 1.8rem;
   }
 
-  .bannerText p {
-    font-size: 13px;
+  .textoBanner p {
+    font-size: 0.9rem;
   }
 
-
-
-
-  .quickSection {
+  .secaoAtalhos {
     padding: 70px 20px;
   }
 
-  .sectionIntro h2 {
-    font-size: 32px;
+  .introducaoSecao h2 {
+    font-size: 1.8rem;
   }
 
-  .quickGrid {
+  .gradeAtalhos {
     grid-template-columns: 1fr;
   }
 
+  .cartaoAtalho p {
+    font-size: 0.9rem;
+  }
 
-
-
-  .project {
+  .projeto {
     padding: 70px 20px;
   }
 
-  .projectContent h2 {
-    font-size: 38px;
+  .conteudoProjeto h2 {
+    font-size: 2.2rem;
   }
 
+  .textoProjeto p {
+    font-size: 0.95rem;
+  }
 
-
-
-  .techSection {
+  .secaoTecnologias {
     padding: 70px 20px;
   }
 
-  .techHeader {
+  .cabecalhoTecnologias {
     display: block;
   }
 
-  .techHeader p {
+  .cabecalhoTecnologias p {
     margin-top: 15px;
   }
 
-  .techList {
+  .listaTecnologias {
     grid-template-columns: 1fr 1fr;
   }
 
-
-
-  .mission {
+  .missao {
     padding: 70px 20px;
   }
 
-  .missionBox {
+  .caixaMissao {
     grid-template-columns: 1fr;
   }
 
-  .missionSide {
+  .lateralMissao {
     min-height: 100px;
-
     flex-direction: row;
-
     align-items: center;
-
     border-right: none;
-
     border-bottom: 1px solid #3b4160;
   }
 
-  .missionSymbol {
+  .simboloMissao {
     font-size: 35px;
   }
 
-  .missionContent {
+  .conteudoMissao {
     padding: 30px 25px;
   }
 
-  .missionContent h2 {
-    font-size: 28px;
+  .conteudoMissao h2 {
+    font-size: 1.8rem;
   }
 
-
+  .conteudoMissao p {
+    font-size: 0.9rem;
+  }
 }

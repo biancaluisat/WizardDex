@@ -6,8 +6,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Navbar from '@/components/Header/Header';
-import CardPersonagens from '@/components/Personagens/Card/CardPersonagens';
-import ModalPersonagens from '@/components/Personagens/Modal/ModalPersonagens';
+import CardPersonagens from '@/components/Card/CardPersonagens';
+import ModalPersonagens from '@/components/Modal/ModalPersonagens';
 import styles from './personagens.module.css';
 
 export default function PersonagensPage() {
