@@ -6,9 +6,6 @@ export default function Home() {
   return (
     <main className={styles.main}>
 
-      {/* =========================
-          NAVBAR
-      ========================= */}
 
       <header className={styles.navbar}>
         <div className={styles.navContainer}>
@@ -44,10 +41,6 @@ export default function Home() {
         </div>
       </header>
 
-
-      {/* =========================
-          BANNER
-      ========================= */}
 
       <section className={styles.banner}>
 
@@ -116,10 +109,6 @@ export default function Home() {
       </section>
 
 
-      {/* =========================
-          CARDS PRINCIPAIS
-      ========================= */}
-
       <section className={styles.quickSection}>
 
         <div className={styles.sectionIntro}>
@@ -137,9 +126,6 @@ export default function Home() {
 
         <div className={styles.quickGrid}>
 
-          {/* =========================
-              PERSONAGENS
-          ========================= */}
 
           <Link
             href="/personagens"
@@ -174,10 +160,6 @@ export default function Home() {
 
           </Link>
 
-
-          {/* =========================
-              SOBRE
-          ========================= */}
 
           <Link
             href="/sobre"
@@ -215,11 +197,6 @@ export default function Home() {
         </div>
 
       </section>
-
-
-      {/* =========================
-          SOBRE O PROJETO
-      ========================= */}
 
       <section className={styles.project}>
 
@@ -266,10 +243,6 @@ export default function Home() {
 
       </section>
 
-
-      {/* =========================
-          TECNOLOGIAS
-      ========================= */}
 
       <section className={styles.techSection}>
 
@@ -365,10 +338,6 @@ export default function Home() {
 
       </section>
 
-
-      {/* =========================
-          OBJETIVO
-      ========================= */}
 
       <section className={styles.mission}>
 
