@@ -52,7 +52,7 @@ export default function PersonagensPage() {
   };
 
   return (
-    <>
+    <div className={styles.pageWrapper}>
       <Navbar />
 
       <main className={styles.container}>
@@ -100,6 +100,6 @@ export default function PersonagensPage() {
           />
         )}
       </main>
-    </>
+    </div>
   );
 }
