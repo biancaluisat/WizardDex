@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import Navbar from '@/components/Header/Header';
+import Header from '@/components/Header/Header';
 import styles from './not-found.module.css';
 
 export default function NotFound() {
   return (
     <div className={styles.pageWrapper}>
-      <Navbar />
+      <Header />
 
       <main className={styles.container}>
         <div className={styles.errorCard}>
