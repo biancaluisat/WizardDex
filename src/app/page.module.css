@@ -1,98 +1,969 @@
-.container {
-    box-sizing: border-box;
-    display: flex;
-    min-height: 100vh;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 2rem 1.5rem;
-    background-image:
-        linear-gradient(to bottom, rgba(10, 15, 30, 0.35), rgba(10, 15, 30, 0.5)),
-        url('https://minio.codeverse.dev.br/mural/1785506074998-36fiuq.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family:
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        'Segoe UI',
-        Roboto,
-        sans-serif;
-    text-align: center;
+/* =========================
+   PÁGINA
+========================= */
+
+.main {
+  min-height: 100vh;
+  background: #080b20;
+  color: #f4f1e8;
+  overflow-x: hidden;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 15rem 0 0 0;
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  height: 75px;
+  background: #080b20;
+  border-bottom: 1px solid #292d4d;
 }
 
-.title {
-    margin: 0;
-    background: linear-gradient(135deg, #a5b4fc 0%, #38bdf8 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 800;
-    letter-spacing: -0.02em;
+.navContainer {
+  max-width: 1200px;
+  height: 100%;
+  margin: auto;
+  padding: 0 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.subtitle {
-    margin-top: 0.25rem;
-    color: #cbd5e1;
-    font-size: clamp(1rem, 2.5vw, 1.4rem);
-    font-weight: 400;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  text-decoration: none;
+  color: #f4f1e8;
 }
 
-.cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    margin-top: 1rem;
-    border-radius: 999px;
-    padding: 0.85rem 2.25rem;
-    background: linear-gradient(135deg, #a5b4fc 0%, #38bdf8 100%);
-    color: #0a0f1e;
-    font-weight: 700;
-    text-decoration: none;
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+.brand img {
+  object-fit: contain;
 }
 
-.cta:hover {
-    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.35);
-    transform: translateY(-2px);
+.brand div {
+  display: flex;
+  flex-direction: column;
 }
 
-.ctaIcon {
-    animation: spin 6s linear infinite;
+.brand strong {
+  color: #e1b85c;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  letter-spacing: 2px;
 }
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.brand small {
+  color: #858ba7;
+  font-size: 8px;
+  letter-spacing: 1.5px;
 }
 
-.tagline {
-    margin-top: 1rem;
-    color: #94a3b8;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+.navContainer nav {
+  display: flex;
+  gap: 30px;
 }
+
+.navContainer nav a {
+  color: #c2c5d4;
+  text-decoration: none;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.navContainer nav a:hover {
+  color: #e1b85c;
+}
+
+.navContainer nav .active {
+  color: #e1b85c;
+}
+
+
+/* =========================
+   BANNER
+========================= */
+
+.banner {
+  height: 680px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.bannerImage {
+  object-fit: cover;
+  z-index: 0;
+
+  filter: brightness(0.55);
+}
+
+.bannerOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 11, 32, 0.25),
+    rgba(8, 11, 32, 0.9)
+  );
+}
+
+.bannerContent {
+  position: relative;
+  z-index: 3;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 15px;
+}
+
+
+/* =========================
+   TEXTO ACIMA DA LOGO
+========================= */
+
+.bannerTop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 2px;
+}
+
+.bannerTop span {
+  width: 35px;
+  height: 1px;
+
+  background: #d4a94f;
+}
+
+.bannerTop p {
+  margin: 0;
+
+  color: #e1b85c;
+
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.bannerLogo {
+  width: 290px;
+  height: 290px;
+
+  object-fit: contain;
+
+  transition: 0.4s;
+}
+
+.bannerLogo:hover {
+  transform: scale(1.05);
+}
+
+
+/* =========================
+   TEXTO ABAIXO DA LOGO
+========================= */
+
+.bannerText {
+  margin-top: 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bannerText h1 {
+  margin: 0 0 12px;
+
+  color: #f0cc72;
+
+  font-family: Georgia, serif;
+
+  font-size: 28px;
+
+  font-weight: normal;
+}
+
+.bannerText p {
+  max-width: 500px;
+
+  margin: 0 0 28px;
+
+  color: #dedfea;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   BOTÃO DO BANNER
+========================= */
+
+.bannerButton {
+  padding: 13px 22px;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  background: #d4a94f;
+
+  color: #080b20;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.bannerButton:hover {
+  background: #f0cc72;
+
+  transform: translateY(-3px);
+}
+
+.bannerButton span {
+  font-size: 17px;
+}
+
+
+/* =========================
+   DECORAÇÕES
+========================= */
+
+.bannerDecoration {
+  position: absolute;
+
+  z-index: 2;
+
+  inset: 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  pointer-events: none;
+}
+
+.bannerDecoration span {
+  color: #d4a94f;
+
+  font-size: 18px;
+}
+
+
+/* =========================
+   SEÇÃO DOS CARDS
+========================= */
+
+.quickSection {
+  max-width: 1000px;
+
+  margin: auto;
+
+  padding: 90px 25px;
+}
+
+.sectionIntro {
+  margin-bottom: 35px;
+}
+
+.sectionIntro > span {
+  color: #d4a94f;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+}
+
+.sectionIntro h2 {
+  margin: 10px 0 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 38px;
+
+  font-weight: normal;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.quickGrid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.quickCard {
+  position: relative;
+
+  min-height: 260px;
+
+  padding: 28px;
+
+  background: #111735;
+
+  border: 1px solid #292e50;
+
+  color: #f4f1e8;
+
+  text-decoration: none;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.quickCard:hover {
+  transform: translateY(-8px);
+
+  border-color: #d4a94f;
+
+  background: #171e43;
+}
+
+
+/* CARD ROXO */
+
+.purpleCard {
+  background: #30285b;
+}
+
+.purpleCard:hover {
+  background: #3a316b;
+}
+
+
+/* NÚMERO */
+
+.cardNumber {
+  color: #d4a94f;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+
+/* CONTEÚDO */
+
+.cardContent {
+  margin-top: 30px;
+}
+
+.cardIcon {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #e7c56c;
+
+  font-size: 30px;
+}
+
+.quickCard h3 {
+  margin: 0 0 10px;
+
+  font-family: Georgia, serif;
+
+  font-size: 27px;
+
+  font-weight: normal;
+}
+
+.quickCard p {
+  max-width: 340px;
+
+  margin: 0;
+
+  color: #b9bed0;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* SETA */
+
+.arrow {
+  position: absolute;
+
+  right: 23px;
+
+  bottom: 20px;
+
+  color: #d4a94f;
+
+  font-size: 20px;
+
+  transition: 0.3s;
+}
+
+.quickCard:hover .arrow {
+  transform: translate(5px, -5px);
+}
+
+
+/* =========================
+   SOBRE O PROJETO
+========================= */
+
+.project {
+  padding: 90px 25px;
+
+  background: #10152f;
+
+  border-top: 1px solid #252b49;
+
+  border-bottom: 1px solid #252b49;
+}
+
+.projectTag {
+  max-width: 1150px;
+
+  margin: 0 auto 35px;
+
+  color: #d4a94f;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+}
+
+.projectContent {
+  max-width: 1150px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 70px;
+}
+
+.projectContent h2 {
+  margin: 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 48px;
+
+  font-weight: normal;
+
+  line-height: 1.1;
+}
+
+.projectContent h2 span {
+  color: #e1b85c;
+}
+
+.projectText p {
+  margin: 0 0 20px;
+
+  color: #bfc3d3;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+.projectLine {
+  max-width: 1150px;
+
+  margin: 55px auto 0;
+
+  height: 1px;
+
+  background: #383d5c;
+}
+
+
+/* =========================
+   TECNOLOGIAS
+========================= */
+
+.techSection {
+  max-width: 1150px;
+
+  margin: auto;
+
+  padding: 90px 25px;
+}
+
+.techHeader {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: end;
+
+  margin-bottom: 35px;
+}
+
+.techHeader span {
+  color: #d4a94f;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+}
+
+.techHeader h2 {
+  margin: 8px 0 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 38px;
+
+  font-weight: normal;
+}
+
+.techHeader p {
+  max-width: 300px;
+
+  margin: 0;
+
+  color: #858ba6;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* TECNOLOGIAS */
+
+.techList {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 12px;
+}
+
+.techItem {
+  min-height: 130px;
+
+  padding: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  background: #111735;
+
+  border: 1px solid #292e50;
+
+  transition: 0.3s;
+}
+
+.techItem:hover {
+  transform: translateY(-5px);
+
+  border-color: #d4a94f;
+
+  background: #171e43;
+}
+
+.techItem > span {
+  color: #d4a94f;
+
+  font-size: 9px;
+}
+
+.techItem strong {
+  font-family: Georgia, serif;
+
+  font-size: 19px;
+
+  font-weight: normal;
+}
+
+.techItem small {
+  color: #7e85a2;
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================
+   OBJETIVO
+========================= */
+
+.mission {
+  padding: 90px 25px;
+
+  background: #0b0f27;
+}
+
+.missionBox {
+  max-width: 1050px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 190px 1fr;
+
+  background: #1b2450;
+
+  border: 1px solid #3b4160;
+}
+
+.missionSide {
+  padding: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  border-right: 1px solid #3b4160;
+}
+
+.missionSide > span {
+  color: #d4a94f;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+}
+
+.missionSymbol {
+  color: #e4c36c;
+
+  font-size: 55px;
+
+  text-align: center;
+}
+
+.missionSide small {
+  color: #727a98;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+}
+
+.missionContent {
+  padding: 45px;
+}
+
+.missionContent h2 {
+  margin: 0 0 18px;
+
+  font-family: Georgia, serif;
+
+  font-size: 35px;
+
+  font-weight: normal;
+}
+
+.missionContent h2 span {
+  color: #e1b85c;
+}
+
+.missionContent p {
+  max-width: 600px;
+
+  margin: 0 0 25px;
+
+  color: #c0c4d2;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+.missionButton {
+  display: inline-block;
+
+  padding: 12px 18px;
+
+  border: 1px solid #d4a94f;
+
+  color: #e1b85c;
+
+  text-decoration: none;
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  transition: 0.3s;
+}
+
+.missionButton:hover {
+  background: #d4a94f;
+
+  color: #080b20;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 .footer {
-    color: rgba(148, 163, 184, 0.6);
-    font-size: 0.85rem;
+  max-width: 1150px;
+
+  min-height: 90px;
+
+  margin: auto;
+
+  padding: 20px 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-top: 1px solid #252b49;
 }
+
+.footerBrand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+.footerBrand strong {
+  color: #e1b85c;
+
+  font-family: Georgia, serif;
+
+  font-size: 13px;
+
+  letter-spacing: 2px;
+}
+
+.footerBrand img {
+  object-fit: contain;
+}
+
+.footer p {
+  margin: 0;
+
+  color: #777f9b;
+
+  font-size: 11px;
+}
+
+.footer > span {
+  color: #555d78;
+
+  font-size: 9px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .quickGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .projectContent {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .techList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .missionBox {
+    grid-template-columns: 160px 1fr;
+  }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+  .navbar {
+    height: auto;
+  }
+
+  .navContainer {
+    padding: 15px 20px;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .navContainer nav {
+    gap: 18px;
+  }
+
+  .navContainer nav a {
+    font-size: 10px;
+  }
+
+
+  /* BANNER */
+
+  .banner {
+    height: 620px;
+  }
+
+  .bannerContent {
+    padding: 0 20px;
+  }
+
+  .bannerLogo {
+    width: 220px;
+
+    height: 220px;
+  }
+
+  .bannerText {
+    margin-top: 18px;
+  }
+
+  .bannerText h1 {
+    font-size: 22px;
+  }
+
+  .bannerText p {
+    font-size: 13px;
+  }
+
+
+  /* CARDS */
+
+  .quickSection {
+    padding: 70px 20px;
+  }
+
+  .sectionIntro h2 {
+    font-size: 32px;
+  }
+
+  .quickGrid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* SOBRE */
+
+  .project {
+    padding: 70px 20px;
+  }
+
+  .projectContent h2 {
+    font-size: 38px;
+  }
+
+
+  /* TECNOLOGIAS */
+
+  .techSection {
+    padding: 70px 20px;
+  }
+
+  .techHeader {
+    display: block;
+  }
+
+  .techHeader p {
+    margin-top: 15px;
+  }
+
+  .techList {
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  /* OBJETIVO */
+
+  .mission {
+    padding: 70px 20px;
+  }
+
+  .missionBox {
+    grid-template-columns: 1fr;
+  }
+
+  .missionSide {
+    min-height: 100px;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    border-right: none;
+
+    border-bottom: 1px solid #3b4160;
+  }
+
+  .missionSymbol {
+    font-size: 35px;
+  }
+
+  .missionContent {
+    padding: 30px 25px;
+  }
+
+  .missionContent h2 {
+    font-size: 28px;
+  }
+
+  }
