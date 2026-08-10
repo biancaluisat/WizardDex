@@ -5,7 +5,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import Navbar from '@/components/Header/Header';
+import Header from '@/components/Header/Header';
 import CardPersonagens from '@/components/Personagens/Card/CardPersonagens';
 import ModalPersonagens from '@/components/Personagens/Modal/ModalPersonagens';
 import styles from './personagens.module.css';
@@ -53,7 +53,7 @@ export default function PersonagensPage() {
 
   return (
     <div className={styles.pageWrapper}>
-      <Navbar />
+      <Header />
 
       <main className={styles.container}>
         <ToastContainer position="top-right" autoClose={3000} />
