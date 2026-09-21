@@ -22,7 +22,7 @@ export default function PersonagensPage() {
       try {
         setLoading(true);
         setError(null);
-        const response = await axios.get('https://hp-api.onrender.com/api/characters');
+        const response = await axios.get(`${process.env.API_URL_PERSONAGENS}`);
         setCharacters(response.data);
       } catch (err) {
         setError('Ocorreu um erro ao carregar os personagens. Tente novamente.');
