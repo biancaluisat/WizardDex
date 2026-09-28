@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from '@/components/Header/Header';
 import CardPersonagens from '@/components/Personagens/Card/CardPersonagens';
 import ModalPersonagens from '@/components/Personagens/Modal/ModalPersonagens';
+import CharacterCreateModal from '@/components/Personagens/Modal/CharacterCreateModal';
 import styles from './personagens.module.css';
 
 export default function PersonagensPage() {
@@ -16,23 +17,43 @@ export default function PersonagensPage() {
   const [error, setError] = useState(null);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [favorites, setFavorites] = useState([]);
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const fetchCharacters = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const response = await axios.get('/api/personagens');
+      setCharacters(response.data);
+    } catch (err) {
+      setError('Ocorreu um erro ao carregar os personagens. Tente novamente.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchCharacters = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        const response = await axios.get(`${process.env.API_URL_PERSONAGENS}`);
-        setCharacters(response.data);
-      } catch (err) {
-        setError('Ocorreu um erro ao carregar os personagens. Tente novamente.');
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchCharacters();
   }, []);
+
+  const handleCreateCharacter = async (payload) => {
+    try {
+      setIsSubmitting(true);
+
+      const response = await axios.post('/api/personagens', payload);
+      setCharacters((current) => [response.data, ...current]);
+      setIsCreateModalOpen(false);
+      toast.success(`${response.data.name || 'Personagem'} foi adicionado com sucesso! ✨`, {
+        theme: 'dark',
+      });
+    } catch (err) {
+      const message = err.response?.data?.message || 'Não foi possível criar o personagem.';
+      toast.error(message, { theme: 'dark' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const handleToggleFavorite = (character, e) => {
     e.stopPropagation();
@@ -63,6 +84,14 @@ export default function PersonagensPage() {
           <p className={styles.pageSubtitle}>
             Explore e conheça os bruxos e bruxas registrados no Ministério da Magia.
           </p>
+
+          <button
+            type="button"
+            className={styles.createButton}
+            onClick={() => setIsCreateModalOpen(true)}
+          >
+            + Adicionar personagem
+          </button>
         </header>
 
         {loading && (
@@ -99,6 +128,13 @@ export default function PersonagensPage() {
             onClose={() => setSelectedCharacter(null)}
           />
         )}
+
+        <CharacterCreateModal
+          open={isCreateModalOpen}
+          isSubmitting={isSubmitting}
+          onClose={() => setIsCreateModalOpen(false)}
+          onSubmit={handleCreateCharacter}
+        />
       </main>
     </div>
   );
