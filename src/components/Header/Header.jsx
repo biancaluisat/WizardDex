@@ -11,6 +11,8 @@ export default function Header() {
   const headerItems = [
     { name: 'Home', path: '/' },
     { name: 'Personagens', path: '/personagens' },
+    { name: 'Favoritos', path: '/favoritos' },
+    { name: 'Feitiços', path: '/feiticos' },
     { name: 'Sobre', path: '/sobre' },
   ];
 
@@ -32,7 +34,9 @@ export default function Header() {
         <nav>
           <ul className={styles.headerList}>
             {headerItems.map((item) => {
-              const isActive = pathname === item.path;
+              const isActive = item.path === '/favoritos'
+                ? pathname.startsWith(item.path)
+                : pathname === item.path;
 
               return (
                 <li key={item.path}>

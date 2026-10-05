@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,6 +13,7 @@ import CharacterCreateModal from '@/components/Personagens/Modal/CharacterCreate
 import styles from './personagens.module.css';
 
 export default function PersonagensPage() {
+  const router = useRouter();
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -20,36 +22,61 @@ export default function PersonagensPage() {
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const fetchCharacters = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      const response = await axios.get('/api/personagens');
-      setCharacters(response.data);
-    } catch (err) {
-      setError('Ocorreu um erro ao carregar os personagens. Tente novamente.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
+    const savedFavorites = localStorage.getItem('wizarddex-favorites');
+    if (savedFavorites) {
+      try {
+        const parsedFavorites = JSON.parse(savedFavorites);
+        if (Array.isArray(parsedFavorites)) {
+          setFavorites(parsedFavorites);
+        } else {
+          localStorage.removeItem('wizarddex-favorites');
+        }
+      } catch {
+        localStorage.removeItem('wizarddex-favorites');
+      }
+    }
+
+    const fetchCharacters = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        const response = await axios.get('/api/personagens');
+        let customCharacters = [];
+        try {
+          const savedCharacters = JSON.parse(localStorage.getItem('wizarddex-custom-characters') || '[]');
+          customCharacters = Array.isArray(savedCharacters) ? savedCharacters : [];
+        } catch {
+          localStorage.removeItem('wizarddex-custom-characters');
+        }
+        setCharacters([...customCharacters, ...response.data]);
+      } catch {
+        setError('Ocorreu um erro ao carregar os personagens. Tente novamente.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchCharacters();
   }, []);
 
   const handleCreateCharacter = async (payload) => {
     try {
       setIsSubmitting(true);
-
-      const response = await axios.post('/api/personagens', payload);
-      setCharacters((current) => [response.data, ...current]);
+      const newCharacter = {
+        ...payload,
+        id: `custom-${Date.now()}`,
+      };
+      const savedCharacters = JSON.parse(localStorage.getItem('wizarddex-custom-characters') || '[]');
+      const updatedCharacters = [newCharacter, ...(Array.isArray(savedCharacters) ? savedCharacters : [])];
+      localStorage.setItem('wizarddex-custom-characters', JSON.stringify(updatedCharacters));
+      setCharacters((current) => [newCharacter, ...current]);
       setIsCreateModalOpen(false);
-      toast.success(`${response.data.name || 'Personagem'} foi adicionado com sucesso! ✨`, {
+      toast.success(`${newCharacter.name || 'Personagem'} foi adicionado com sucesso! ✨`, {
         theme: 'dark',
       });
-    } catch (err) {
-      const message = err.response?.data?.message || 'Não foi possível criar o personagem.';
-      toast.error(message, { theme: 'dark' });
+    } catch {
+      toast.error('Não foi possível salvar o personagem neste navegador.', { theme: 'dark' });
     } finally {
       setIsSubmitting(false);
     }
@@ -60,15 +87,20 @@ export default function PersonagensPage() {
     const isFav = favorites.includes(character.id);
 
     if (isFav) {
-      setFavorites(favorites.filter((id) => id !== character.id));
+      const updatedFavorites = favorites.filter((id) => id !== character.id);
+      setFavorites(updatedFavorites);
+      localStorage.setItem('wizarddex-favorites', JSON.stringify(updatedFavorites));
       toast.info(`${character.name} foi removido dos favoritos! 💔`, {
         theme: 'dark',
       });
     } else {
-      setFavorites([...favorites, character.id]);
+      const updatedFavorites = [...favorites, character.id];
+      setFavorites(updatedFavorites);
+      localStorage.setItem('wizarddex-favorites', JSON.stringify(updatedFavorites));
       toast.success(`${character.name} foi adicionado aos favoritos! ✨`, {
         theme: 'dark',
       });
+      router.push(`/favoritos/${character.id}`);
     }
   };
 
@@ -109,17 +141,19 @@ export default function PersonagensPage() {
         )}
 
         {!loading && !error && (
-          <div className={styles.charactersGrid}>
-            {characters.map((char) => (
-              <CardPersonagens
-                key={char.id}
-                character={char}
-                onSelect={setSelectedCharacter}
-                isFavorite={favorites.includes(char.id)}
-                onToggleFavorite={handleToggleFavorite}
-              />
-            ))}
-          </div>
+          characters.length > 0 ? (
+            <div className={styles.charactersGrid}>
+              {characters.map((char) => (
+                <CardPersonagens
+                  key={char.id}
+                  character={char}
+                  onSelect={setSelectedCharacter}
+                  isFavorite={favorites.includes(char.id)}
+                  onToggleFavorite={handleToggleFavorite}
+                />
+              ))}
+            </div>
+          ) : <p className={styles.emptyMessage}>Nenhum personagem encontrado.</p>
         )}
 
         {selectedCharacter && (

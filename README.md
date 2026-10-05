@@ -16,6 +16,16 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## HP API
+
+The app uses the production API at `https://hp-api.onrender.com` by default. To use a local API server, set this in `.env.local`:
+
+```env
+HP_API_BASE_URL=http://localhost:5000
+```
+
+The character gallery lists all characters. The local proxy also exposes students, staff, and house filters. Character details use `/api/character/:id`, and the spellbook uses `/api/spells`. Since the API is read-only, characters added through the app are saved only in the current browser.
+
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
