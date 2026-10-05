@@ -12,7 +12,6 @@ export default function Header() {
     { name: 'Home', path: '/' },
     { name: 'Personagens', path: '/personagens' },
     { name: 'Favoritos', path: '/favoritos' },
-    { name: 'Feitiços', path: '/feiticos' },
     { name: 'Sobre', path: '/sobre' },
   ];
 

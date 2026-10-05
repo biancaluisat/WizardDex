@@ -24,7 +24,7 @@ The app uses the production API at `https://hp-api.onrender.com` by default. To 
 HP_API_BASE_URL=http://localhost:5000
 ```
 
-The character gallery lists all characters. The local proxy also exposes students, staff, and house filters. Character details use `/api/character/:id`, and the spellbook uses `/api/spells`. Since the API is read-only, characters added through the app are saved only in the current browser.
+The character gallery lists all characters. The local proxy also exposes students, staff, and house filters. Character details use `/api/character/:id`. Since the API is read-only, characters added through the app are saved only in the current browser.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
